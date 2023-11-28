@@ -2,25 +2,24 @@ CREATE TABLE Usuarios (
     id_usuario SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    senha VARCHAR(255) NOT NULL, -- Recomendado armazenar a senha como um hash
-    endereco VARCHAR(255)
+    senha VARCHAR(255) NOT NULL -- Recomendado armazenar a senha como um hash
 );
 
 CREATE TABLE Filmes (
     id_filme SERIAL PRIMARY KEY,
     titulo VARCHAR(80) NOT NULL,
-    titulo_original VARCHAR(80) NOT NULL
-    sinopse VARCHAR(500) NOT NULL
-    faixa_etaria INTEGER NOT NULL
+    sinopse VARCHAR(500) NOT NULL,
+    faixa_etaria INTEGER NOT NULL,
     duracao INTEGER NOT NULL
 );
-CREATE TABLE SalasDeCinema (git remote -v
 
+CREATE TABLE SalasDeCinema (
     id_sala SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     capacidade INTEGER NOT NULL,
     tipo_de_sala INTEGER NOT NULL
 );
+
 CREATE TABLE Sessoes (
     id_sessao SERIAL PRIMARY KEY,
     id_filme INTEGER,
@@ -32,7 +31,7 @@ CREATE TABLE Sessoes (
     FOREIGN KEY (id_sala) REFERENCES SalasDeCinema(id_sala)
 );
 
-CREATE TABLE Reservas (
+CREATE TABLE Ingresso (
     id_reserva SERIAL PRIMARY KEY,
     id_sessao INTEGER,
     id_usuario INTEGER,
