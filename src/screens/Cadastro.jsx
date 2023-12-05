@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';  
 import { LoginContext } from '../components/loginContext';
 
-const Cadastro = () => {
+const Cadastro = (props) => {
   const { handleCadastro } = useContext(LoginContext);
   const navigation = useNavigation();
 

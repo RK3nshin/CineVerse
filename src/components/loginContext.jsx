@@ -54,10 +54,10 @@ export default function LoginProvider({ children }) {
       const data = await response.json();
   
       if (data.id_CineUsuario) {
-        console.log('Cadastro bem-sucedido');
+        console.warn('Cadastro bem-sucedido');
         return true;
       } else {
-        console.error('Erro ao cadastrar usuário:', data);
+        console.warn('Cadastro bem-sucedido');
         return false;
       }
     } catch (error) {
