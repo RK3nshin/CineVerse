@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { LoginContext } from '../components/loginContext';
+import React, { useContext, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Login = () => {
   const { email, setEmail, senha, setSenha, autenticado, handleLogin } = useContext(LoginContext);
@@ -21,8 +23,9 @@ const Login = () => {
   }, [autenticado, navigation]);
 
   const handleCadastroPress = () => {
-    navigation.navigate('Cadastro');
+    navigation.navigate('Cadastro'); // Navegar para a tela de cadastro
   };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bem-vindo ao CineVerse</Text>
@@ -51,6 +54,13 @@ const Login = () => {
       >
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={handleCadastroPress}
+      >
+        <Text style={styles.buttonText}>Cadastro</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -78,20 +88,20 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     width: '100%',
-    borderColor: '#FFCC00', 
+    borderColor: '#FFCC00',
     borderWidth: 1,
     marginBottom: 16,
     paddingHorizontal: 8,
-    color: '#FFFFFF', 
+    color: '#FFFFFF',
     borderRadius: 8,
   },
   loginButton: {
-    backgroundColor: '#FFCC00', 
+    backgroundColor: '#FFCC00',
     paddingVertical: 14,
     paddingHorizontal: 20,
     marginTop: 20,
-    width :'100%',
-    borderRadius: 30.
+    width: '100%',
+    borderRadius: 30,
   },
   buttonText: {
     color: '#000000',
@@ -100,5 +110,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
 
 export default Login;

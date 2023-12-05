@@ -1,5 +1,5 @@
-// loginContext.js
 import React, { useState, createContext } from 'react';
+import axios from 'axios'; 
 
 export const LoginContext = createContext({});
 
@@ -10,8 +10,15 @@ export default function LoginProvider({ children }) {
 
   const handleLogin = async () => {
     try {
-      // ... (o restante do código de login permanece o mesmo)
-
+      const response = await fetch('https://banco-cine-verse.vercel.app/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, senha }),
+      });
+      const data = await response.json();
+        
       if (data.autenticado) {
         setAutenticado(true);
         console.log('Login bem-sucedido');
@@ -24,26 +31,28 @@ export default function LoginProvider({ children }) {
       console.error('Erro ao realizar login:', error);
     }
   };
+
   const handleCadastro = async (nome, emailCadastro, senhaCadastro) => {
     try {
-      const response = await fetch('https://banco-cine-verse.vercel.app/CineUsuarios', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nome, email: emailCadastro, senha: senhaCadastro }),
+      const response = await axios.post('https://banco-cine-verse.vercel.app/CineUsuarios', {
+        nome,
+        email: emailCadastro,
+        senha: senhaCadastro,
       });
 
-      const data = await response.json();
+      const data = response.data;
 
       if (data.id_CineUsuario) {
+        setAutenticado(true);
         console.log('Cadastro bem-sucedido');
-        return true; // Indica que o cadastro foi bem-sucedido
+        return true; 
       } else {
+        setAutenticado(false);
         console.error('Erro ao cadastrar usuário');
-        return false; // Indica que houve um problema no cadastro
+        return false; 
       }
     } catch (error) {
+      setAutenticado(false);
       console.error('Erro ao realizar cadastro:', error);
       return false;
     }

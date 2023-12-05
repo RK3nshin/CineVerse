@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   titulo: {
-    fontFamily: 'times', // Use uma fonte cursiva específica
+    fontFamily: 'times', 
     fontSize: 35,
     color: 'yellow',
     letterSpacing: 10,
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   imagemFilmePrincipal: {
-    width: 200, // Defina a largura da imagem conforme necessário
-    height: 300, // Defina a altura da imagem conforme necessário
-    resizeMode: 'cover', // Pode ajustar conforme necessário
-    borderRadius: 10, // Borda arredondada
+    width: 200, 
+    height: 300, 
+    resizeMode: 'cover', 
+    borderRadius: 10, 
   },
 });

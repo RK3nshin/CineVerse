@@ -1,9 +1,9 @@
 import { StyleSheet, FlatList, View } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ListItem } from '@rneui/themed';
+import { ListItem } from 'react-native-elements'
 import { Icon } from '@rneui/base';
-import { FilmeContext } from './FilmeContext';
+import { FilmeContext } from '../components/FilmeContext';
 
 export default function Escolha(props) {
     
