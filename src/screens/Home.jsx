@@ -5,7 +5,6 @@ export default function App() {
   const sinopseExemplo = "John Wick é uma franquia de mídia de suspense e ação neo-noir americana criada pelo roteirista Derek Kolstad e estrelada por Keanu Reeves como John Wick, um ex-assassino que é forçado a voltar ao submundo do crime que havia abandonado";
   const sinopseExemplo2 = "'Daisuke, Miyako, Iori, Takeru Takashi, Hikari e Ken devem conciliar novas responsabilidades com seus parceiros Digimon. Mas Rui Owada, um jovem misterioso, parece afirmar ser o primeiro humano a fazer parceria com um Digimon.";
   const sinopseExemplo3 =" Coriolanus Snow orienta e desenvolve sentimentos pela tributo feminina ao Distrito 12 durante os 10º Jogos Vorazes.";
-  // Informações sobre os filmes (adicionar mais conforme necessário)
   const filmes = [
     {
       titulo: 'john Wick',

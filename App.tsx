@@ -26,7 +26,7 @@ export default function App() {
               fontSize: 24,
               color: 'white',
             },
-            headerTintColor: '#FFCC00', // Cor da seta de volta
+            headerTintColor: '#FFCC00', 
           }}
         >
           <Stack.Screen name="Login" component={Login} />

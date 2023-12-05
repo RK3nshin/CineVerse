@@ -71,18 +71,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#1E1E1E', // Cor de fundo
+    backgroundColor: '#1E1E1E', 
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#FFCC00', // Cor do título
+    color: '#FFCC00',
     marginBottom: 16,
   },
   label: {
     fontSize: 18,
     marginBottom: 8,
-    color: '#FFCC00', // Cor do texto
+    color: '#FFCC00', 
     fontFamily: 'times',
   },
   input: {
