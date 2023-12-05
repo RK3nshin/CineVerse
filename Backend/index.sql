@@ -52,12 +52,8 @@ INSERT INTO Filmes (titulo, sinopse, faixa_etaria, duracao, URL_Imagem) VALUES
 
 -- Inserindo o segundo filme
 INSERT INTO Filmes (titulo, sinopse, faixa_etaria, duracao, URL_Imagem) VALUES 
-('O Poderoso Chefão', 'A ascensão de uma família mafiosa', 16, 175, 'https://exemplo.com/poderoso_chefao.jpg');
-
--- Inserindo o terceiro filme
-INSERT INTO Filmes (titulo, sinopse, faixa_etaria, duracao, URL_Imagem) VALUES 
-('Cidadão Kane', 'A vida de um magnata da mídia', 12, 119, 'https://exemplo.com/cidadao_kane.jpg');
-
--- Inserindo o quarto filme
-INSERT INTO Filmes (titulo, sinopse, faixa_etaria, duracao, URL_Imagem) VALUES 
-('Titanic', 'Um romance épico durante o desastre do Titanic', 14, 195, 'https://exemplo.com/titanic.jpg');
+('Jogos Vorazes – A Cantiga dos Pássaros e das Serpentes',
+ 'Coriolanus Snow orienta e desenvolve sentimentos pela tributo feminina ao Distrito 12 durante os 10º Jogos Vorazes.',
+  14,
+  158, 
+  'https://br.web.img3.acsta.net/pictures/23/09/20/17/54/4013241.jpg');
