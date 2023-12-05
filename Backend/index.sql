@@ -48,7 +48,11 @@ INSERT INTO CineUsuarios (nome, email, senha) VALUES ('Carlos', 'Carlos@email.co
 
 -- Inserindo o primeiro filme
 INSERT INTO Filmes (titulo, sinopse, faixa_etaria, duracao, URL_Imagem) VALUES 
-('Matrix', 'Um hacker descobre a verdade sobre sua realidade', 14, 136, 'https://exemplo.com/matrix.jpg');
+('Digimon Adventure 02: O Início',
+ 'Daisuke, Miyako, Iori, Takeru Takashi, Hikari e Ken devem conciliar novas responsabilidades com seus parceiros Digimon. Mas Rui Owada, um jovem misterioso, parece afirmar ser o primeiro humano a fazer parceria com um Digimon.',
+ 12,
+ 87,
+ 'https://uploads.jovemnerd.com.br/wp-content/uploads/2023/07/imagem_2023_07_31_161156773__232207.png');
 
 -- Inserindo o segundo filme
 INSERT INTO Filmes (titulo, sinopse, faixa_etaria, duracao, URL_Imagem) VALUES 
