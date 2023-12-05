@@ -1,25 +1,33 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 export const FilmeContext = createContext({});
 
 export default function FilmeProvider({ children }) {
-  const [titulo, setTitulo] = useState('');
   const [sinopse, setSinopse] = useState('');
-  const [faixa_etaria, setFaixa_Etaria] = useState('');
+  const [faixaEtaria, setFaixaEtaria] = useState('');
   const [duracao, setDuracao] = useState('');
-  const [url_imagem, setUrl_Imagem] = useState('');
+  const [urlImagem, setUrlImagem] = useState('');
   const [filmes, setFilmes] = useState([]);
   const url = "https://banco-cine-verse.vercel.app/Filmes";
 
+  useEffect(() => {
+    buscarFilmes();
+  }, []); 
+
   function buscarFilmes() {
     fetch(url)
-      .then((respFetch) => respFetch.json())
+      .then((respFetch) => {
+        if (!respFetch.ok) {
+          throw new Error(`Erro na requisição: ${respFetch.status}`);
+        }
+        return respFetch.json();
+      })
       .then((respJson) => setFilmes(respJson))
-      .catch((erro) => console.warn(erro))
+      .catch((erro) => console.error('Erro ao buscar filmes:', erro));
   }
 
   return (
-    <FilmeContext.Provider value={{ titulo, sinopse, faixa_etaria, duracao, url_imagem, setTitulo, setSinopse, setFaixa_Etaria, setDuracao, setUrl_Imagem, buscarFilmes, filmes }} >
+    <FilmeContext.Provider value={{ sinopse, faixaEtaria, duracao, urlImagem, setSinopse, setFaixaEtaria, setDuracao, setUrlImagem, filmes, buscarFilmes }}>
       {children}
     </FilmeContext.Provider>
   );
