@@ -1,10 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState, createContext } from 'react';
 
-export default function FilmeContext() {
+export const FilmeContext = createContext({});
+
+export default function FilmeProvider({ children }) {
+  const [titulo, setTitulo] = useState('');
+  const [sinopse, setSinopse] = useState('');
+  const [faixa_etaria, setFaixa_Etaria] = useState('');
+  const [duracao, setDuracao] = useState('');
+  const [url_imagem, setUrl_Imagem] = useState('');
+
   return (
-    <View>
-      <Text>FilmeContext</Text>
-    </View>
-  )
+    
+  );
 }
